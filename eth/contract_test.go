@@ -4,9 +4,9 @@ import (
 	"fmt"
 	"testing"
 
-	"github.com/chenzhijie/go-web3/rpc"
-	"github.com/chenzhijie/go-web3/types"
-	"github.com/chenzhijie/go-web3/utils"
+	"github.com/svija/go-web3/rpc"
+	"github.com/svija/go-web3/types"
+	"github.com/svija/go-web3/utils"
 	"github.com/ethereum/go-ethereum/common"
 )
 
