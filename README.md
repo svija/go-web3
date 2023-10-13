@@ -1,6 +1,6 @@
-<h1 >go-web3</h1>
+<h1 >go-web3 for Falcon</h1>
 
-Go web3  MODIFI VERSION FOR FALCON
+
 
 fork from:@chenzhijie
 ## API
