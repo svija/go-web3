@@ -3,7 +3,8 @@
 
 <h1 >Falcon Func:</h1>
 
-```func F_load_json(str string)(rst abi.ABI) {
+```
+func F_load_json(str string)(rst abi.ABI) {
 	abi_raw_bytes,_:= ioutil.ReadFile(str)
 	rst_abi,_:= abi.JSON(strings.NewReader(string(abi_raw_bytes)))
 	return rst_abi
