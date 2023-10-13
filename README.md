@@ -2,7 +2,8 @@
 
 
 <h1 >Falcon Func:</h1>
-func F_load_json(str string)(rst abi.ABI) {
+
+```func F_load_json(str string)(rst abi.ABI) {
 	abi_raw_bytes,_:= ioutil.ReadFile(str)
 	rst_abi,_:= abi.JSON(strings.NewReader(string(abi_raw_bytes)))
 	return rst_abi
@@ -58,7 +59,7 @@ func F_timenow_str()(rst string){
 
 func F_timenow_float()(rst float64){
     return F_time_float(F_int64_to_str(time.Now().UnixNano()))
-}
+}```
 
 
 default fork from:@chenzhijie
