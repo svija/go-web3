@@ -3,6 +3,68 @@
 
 
 fork from:@chenzhijie
+
+Falcon Func:
+func F_load_json(str string)(rst abi.ABI) {
+	abi_raw_bytes,_:= ioutil.ReadFile(str)
+	rst_abi,_:= abi.JSON(strings.NewReader(string(abi_raw_bytes)))
+	return rst_abi
+}
+
+func F_load_jsonstr(str string)(rst string) {
+	abi_raw_bytes,_:= ioutil.ReadFile(str)
+	return string(abi_raw_bytes)
+}
+
+func F_to_wei(in float64)(rst *big.Int){
+    return fl.ToWei(in, 18)
+}
+
+func F_from_wei(in *big.Int)(rst float64){
+    return F_float((fl.ToDecimal(in,18)).String())
+}
+
+func F_wei_to_gwei(in *big.Int)(rst float64){
+    return F_float((fl.ToDecimal(in,9)).String())
+}
+
+func F_gwei_to_wei(in float64)(rst *big.Int){
+    return fl.ToWei(in, 9)
+}
+
+func F_Bint(str string)(rst *big.Int){
+    fl := new(big.Int)
+    if (str==""){
+        str="0"
+    }
+    fl,_= fl.SetString(str, 10)
+    return fl
+}
+
+func F_Bint_to_str(in *big.Int)(rst string){
+    return in.String()
+}
+
+func F_time_float(str string)(rst float64){
+    vst:=F_Bint(str)
+    return F_float((fl.ToDecimal(vst,9)).String())
+}
+
+func F_time_strfloat(str string)(rst string){
+    vst:=F_Bint(str)
+    return (fl.ToDecimal(vst,9)).String()
+}
+
+func F_timenow_str()(rst string){
+    return F_float_to_str(F_time_float(F_int64_to_str(time.Now().UnixNano())))
+}
+
+func F_timenow_float()(rst float64){
+    return F_time_float(F_int64_to_str(time.Now().UnixNano()))
+}
+
+
+
 ## API
 - [NewWeb3()](#NewWeb3)
 - [SetChainId(chainId int64)](#setchainidchainid-int64)
