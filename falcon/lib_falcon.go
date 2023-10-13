@@ -593,20 +593,3 @@ func SubStr(str string, start int, length int) (result string) {
 
 	return
 }
-
-/**##########################################################
-* 模块：常用包
-* 说明：
-* 备注
- *##########################################################*/
-	//"bytes"
-	//"encoding/base64"
-	//"encoding/hex"
-	//"encoding/json"
-	//"github.com/tidwall/gjson"
-	//"strconv"
-	//"github.com/garyburd/redigo/redis"
-	//"os"
-	//"os/exec"
-	//"github.com/ethereum/go-ethereum/common/hexutil"
-    //"github.com/ethereum/go-ethereum/crypto"
