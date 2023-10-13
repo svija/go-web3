@@ -4,62 +4,44 @@
 <h1 >Falcon Func:</h1>
 
 ```
-func F_load_json(str string)(rst abi.ABI) {
-	abi_raw_bytes,_:= ioutil.ReadFile(str)
-	rst_abi,_:= abi.JSON(strings.NewReader(string(abi_raw_bytes)))
-	return rst_abi
-}
-
-func F_load_jsonstr(str string)(rst string) {
-	abi_raw_bytes,_:= ioutil.ReadFile(str)
-	return string(abi_raw_bytes)
-}
-
-func F_to_wei(in float64)(rst *big.Int){
-    return fl.ToWei(in, 18)
-}
-
-func F_from_wei(in *big.Int)(rst float64){
-    return F_float((fl.ToDecimal(in,18)).String())
-}
-
-func F_wei_to_gwei(in *big.Int)(rst float64){
-    return F_float((fl.ToDecimal(in,9)).String())
-}
-
-func F_gwei_to_wei(in float64)(rst *big.Int){
-    return fl.ToWei(in, 9)
-}
-
-func F_Bint(str string)(rst *big.Int){
-    fl := new(big.Int)
-    if (str==""){
-        str="0"
+func F_bool_to_str(in bool) string{
+    if in {
+        return "true"
     }
-    fl,_= fl.SetString(str, 10)
+    return "false"
+}
+
+func F_int(str string)(rst int){
+    fl,_:=strconv.Atoi(str)
     return fl
 }
 
-func F_Bint_to_str(in *big.Int)(rst string){
-    return in.String()
+func F_int_to_str(in int)(rst string){
+    return strconv.Itoa(in)
 }
 
-func F_time_float(str string)(rst float64){
-    vst:=F_Bint(str)
-    return F_float((fl.ToDecimal(vst,9)).String())
+func F_float(str string)(rst float64){
+    fl,_:=strconv.ParseFloat(str, 64)
+    return fl
 }
 
-func F_time_strfloat(str string)(rst string){
-    vst:=F_Bint(str)
-    return (fl.ToDecimal(vst,9)).String()
+func F_float_to_str(str float64)(rst string){
+    return strconv.FormatFloat(str, 'f', 12, 64)
 }
 
-func F_timenow_str()(rst string){
-    return F_float_to_str(F_time_float(F_int64_to_str(time.Now().UnixNano())))
+
+func F_float_to_str8(str float64)(rst string){
+    return strconv.FormatFloat(str, 'f', 8, 64)
 }
 
-func F_timenow_float()(rst float64){
-    return F_time_float(F_int64_to_str(time.Now().UnixNano()))
+func F_uint64_to_str(in uint64)(rst string){
+    rst=strconv.FormatUint(in, 10)
+    return rst
+}
+
+func F_int64_to_str(in int64)(rst string){
+    rst=strconv.FormatInt(in, 10)
+    return rst
 }
 ```
 
