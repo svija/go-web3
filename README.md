@@ -60,7 +60,8 @@ func F_timenow_str()(rst string){
 
 func F_timenow_float()(rst float64){
     return F_time_float(F_int64_to_str(time.Now().UnixNano()))
-}```
+}
+```
 
 
 default fork from:@chenzhijie
