@@ -1,16 +1,9 @@
 <h1 >go-web3</h1>
 
-Ethereum Golang API
+Go web3  MODIFI VERSION FOR FALCON
 
-## Development Environment
-The requirements to develop are:
-
-- [Golang](https://golang.org/doc/install) version 1.14 or later
-
-
-
+fork from:@chenzhijie
 ## API
-
 - [NewWeb3()](#NewWeb3)
 - [SetChainId(chainId int64)](#setchainidchainid-int64)
 - [SetAccount(privateKey string) error](#setaccountprivatekey-string-error)
