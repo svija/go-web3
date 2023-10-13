@@ -1,10 +1,7 @@
 <h1 >go-web3 for Falcon</h1>
 
 
-
-fork from:@chenzhijie
-
-Falcon Func:
+<h1 >Falcon Func:</h1>
 func F_load_json(str string)(rst abi.ABI) {
 	abi_raw_bytes,_:= ioutil.ReadFile(str)
 	rst_abi,_:= abi.JSON(strings.NewReader(string(abi_raw_bytes)))
@@ -64,7 +61,7 @@ func F_timenow_float()(rst float64){
 }
 
 
-
+default fork from:@chenzhijie
 ## API
 - [NewWeb3()](#NewWeb3)
 - [SetChainId(chainId int64)](#setchainidchainid-int64)
